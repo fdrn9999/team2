@@ -55,7 +55,7 @@
 ## 🏛 기획 및 설계 (Design & Architecture)
 
 ### 1. 유스케이스 다이어그램 (Use Case Diagram)
-**`graph TD`** 를 사용하여 팀원들이 구현할 기능의 포함(`<<include>>`) 및 확장(`<<extend>>`) 관계를 표현했습니다.
+**`graph LR`** 을 사용하여 팀원들이 구현할 기능의 포함(`<<include>>`) 및 확장(`<<extend>>`) 관계를 표현했습니다.
 
 ```mermaid
 graph LR
@@ -65,7 +65,7 @@ graph LR
 
     %% 2. 전체 시스템
     subgraph System ["가계부 시스템 (Household Ledger)"]
-    direction TB %% 서브그래프 내부 세로 정렬
+    direction TB
         
         %% (1) 회원 관리 패키지
         subgraph Member [회원 관리 - 윤성원]
@@ -82,7 +82,7 @@ graph LR
             List(내역 조회)
             Write(가계부 등록)
             Edit(수정/삭제)
-            CheckCat[카테고리 확인] %% 사각형으로 표현 (내부 로직)
+            CheckCat[카테고리 확인]
         end
 
         %% (3) 통계 및 알림 패키지
