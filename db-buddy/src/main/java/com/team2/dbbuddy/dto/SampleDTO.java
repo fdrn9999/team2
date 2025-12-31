@@ -5,8 +5,8 @@ import java.time.LocalDateTime;
 
 @Data
 public class SampleDTO {
-    private Integer id;
-    private Integer tableId;
+    private Integer sampleId;
+    private Integer tblId; // Foreign Key to TBL_META (TBL_ID)
     private String dataJson;
     private String activeFl;
     private LocalDateTime regDt;

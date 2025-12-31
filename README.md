@@ -81,33 +81,33 @@ usecaseDiagram
 ```mermaid
 erDiagram
     USERS {
-        INT ID PK "사용자 고유 ID"
-        VARCHAR NAME "이름"
+        INT USER_ID PK "사용자 고유 ID"
+        VARCHAR USER_NM "이름"
         VARCHAR EMAIL "이메일 (Unique)"
-        VARCHAR PASSWORD "비밀번호"
+        VARCHAR PASSWD "비밀번호"
         CHAR ACTIVE_FL "활성여부"
         TIMESTAMP REG_DT "가입일"
     }
 
     TBL_META {
-        INT ID PK "테이블 ID"
-        VARCHAR NAME "테이블명"
-        VARCHAR DESCRIPTION "설명"
+        INT TBL_ID PK "테이블 ID"
+        VARCHAR TBL_NM "테이블명"
+        VARCHAR TBL_DESC "설명"
         TIMESTAMP REG_DT "등록일"
     }
 
     COL_META {
-        INT ID PK "컬럼 ID"
-        INT TABLE_ID FK "테이블 ID"
-        VARCHAR NAME "컬럼명"
+        INT COL_ID PK "컬럼 ID"
+        INT TBL_ID FK "테이블 ID"
+        VARCHAR COL_NM "컬럼명"
         VARCHAR DATA_TYPE "데이터 타입"
         CHAR NULLABLE "NULL 허용 여부"
         INT ORDER_NO "정렬 순서"
     }
 
     TBL_SAMPLE {
-        INT ID PK "데이터 ID"
-        INT TABLE_ID FK "테이블 ID"
+        INT SAMPLE_ID PK "데이터 ID"
+        INT TBL_ID FK "테이블 ID"
         JSON DATA_JSON "데이터(JSON)"
         CHAR ACTIVE_FL "활성여부"
         TIMESTAMP REG_DT "등록일"

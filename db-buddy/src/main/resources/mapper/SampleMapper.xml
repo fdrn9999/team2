@@ -7,12 +7,12 @@
     </select>
 
     <select id="findById" resultType="SampleDTO">
-        SELECT * FROM TBL_SAMPLE WHERE ID = #{id}
+        SELECT * FROM TBL_SAMPLE WHERE SAMPLE_ID = #{sampleId}
     </select>
 
-    <insert id="save" parameterType="SampleDTO" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO TBL_SAMPLE (TABLE_ID, DATA_JSON, ACTIVE_FL, REG_DT)
-        VALUES (#{tableId}, #{dataJson}, #{activeFl}, NOW())
+    <insert id="save" parameterType="SampleDTO" useGeneratedKeys="true" keyProperty="sampleId">
+        INSERT INTO TBL_SAMPLE (TBL_ID, DATA_JSON, ACTIVE_FL, REG_DT)
+        VALUES (#{tblId}, #{dataJson}, #{activeFl}, NOW())
     </insert>
 
     <update id="update" parameterType="SampleDTO">
@@ -20,11 +20,11 @@
         SET DATA_JSON = #{dataJson},
             ACTIVE_FL = #{activeFl},
             CHG_DT = NOW()
-        WHERE ID = #{id}
+        WHERE SAMPLE_ID = #{sampleId}
     </update>
 
     <delete id="delete">
-        DELETE FROM TBL_SAMPLE WHERE ID = #{id}
+        DELETE FROM TBL_SAMPLE WHERE SAMPLE_ID = #{sampleId}
     </delete>
 
 </mapper>
